@@ -15,6 +15,10 @@ function getComputerChoice(choices = ['Rock', 'Paper', 'Scissors'], weights = [1
 
     num = Math.random();
     for (let i = 0; i < choices.length; ++i) {
+
+        // find where exactly in our weights num falls
+        // we do this by subtracting the probabilities from our random number one at a time until 
+        // our random number is less than the next probability.
         cutoffValue += weights[i];
 
         if (num - weights[i] < epsilon) {
