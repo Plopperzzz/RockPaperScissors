@@ -25,7 +25,7 @@ function getComputerChoice(choices = ['Rock', 'Paper', 'Scissors'], weights = [1
     }
 }
 
-function getWinner(choices=['Rock', 'Paper', 'Scissors'], player1, player2) {
+function getWinner(choices = ['Rock', 'Paper', 'Scissors'], player1, player2) {
     let retVal;
 
     // get player choice index 
@@ -49,17 +49,76 @@ function getWinner(choices=['Rock', 'Paper', 'Scissors'], player1, player2) {
         }
     }
     else {
-        if(player2Index === choices.length - 1 && player1Index === 0)
-        {
+        if (player2Index === choices.length - 1 && player1Index === 0) {
             // check cyclic case
             //message = "player 1 wins!";
             retVal = 0;
         }
-        else{
+        else {
             //message = "Player 2 wins!";
             retVal = 1;
         }
     }
 
     return retVal;
+}
+
+function playGame(choices = ['Rock', 'Paper', 'Scissors']) {
+    let player1Wins = 0,
+
+        // Computer
+        player2Wins = 0,
+        ties = 0;
+
+    // result of one game
+    let res;
+
+    console.log("Rock Paper Scissors!");
+
+    for (let i = 0; i < 5; ++i) {
+
+        let userInput = prompt("What is your choice (Rock Paper Scissors)?");
+
+        userInput = userInput.toLowerCase().slice(0, 1).toUpperCase() + userInput.toLowerCase().slice(1, userInput.length);
+
+        if (!choices.includes(userInput)) {
+            console.error("Not a valid choice");
+            i--;
+            continue;
+        }
+
+        let comp = getComputerChoice();
+        res = getWinner(undefined, userInput, comp);
+
+        console.log(`Player 1 played ${userInput}`);
+        console.log(`Computer played ${comp}`);
+        console.log(res);
+
+        if (res === -1) {
+            ties++;
+            console.log("Tie");
+        }
+        else if (res === 0) {
+            player1Wins++;
+            console.log("Player 1");
+        }
+        else if(res === 1) {
+            player2Wins++;
+            console.log("Computer");
+        }
+
+        console.log(`           Player         Computer
+        ----------------------------
+            ${player1Wins}              ${player2Wins}`);
+    }
+
+    if (player1Wins === player2Wins) {
+        console.log("It's a tie!");
+    };
+    if (player1Wins > player2Wins) {
+        console.log("Player 1 wins!");
+    }
+    else {
+        console.log("Computer wins!");
+    }
 }
