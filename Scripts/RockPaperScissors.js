@@ -81,6 +81,13 @@ function playGame(choices = ['Rock', 'Paper', 'Scissors']) {
 
     for (let i = 0; i < 5; ++i) {
 
+        console.clear();
+
+        console.log(`           Player         Computer
+        ----------------------------
+            ${player1Wins}              ${player2Wins}`);
+            
+
         let userInput = prompt("What is your choice (Rock Paper Scissors)?");
 
         userInput = userInput.toLowerCase().slice(0, 1).toUpperCase() + userInput.toLowerCase().slice(1, userInput.length);
@@ -111,9 +118,6 @@ function playGame(choices = ['Rock', 'Paper', 'Scissors']) {
             console.log("Computer");
         }
 
-        console.log(`           Player         Computer
-        ----------------------------
-            ${player1Wins}              ${player2Wins}`);
     }
 
     if (player1Wins === player2Wins) {
