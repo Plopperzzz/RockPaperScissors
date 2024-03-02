@@ -1,7 +1,4 @@
-/** {
-    outline: white 1px dashed;
-}
-*/
+
 
 body {
     display: flex;
@@ -11,6 +8,7 @@ body {
     background-color: rgb(43, 42, 42);
     font-family: 'roboto';
     padding: 10px 36px;
+    height: 100vh;
 }
 
 ul {
@@ -26,18 +24,19 @@ a {
 }
 
 .body{
+    outline: 1px yellowgreen dotted;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     flex: auto;
-    height: 100vh;
 }
 
 .header {
     display: flex;
     font-family: "Luckiest Guy";
-    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 80px;
     color: rgb(234,235,235);
 }
 
@@ -45,21 +44,20 @@ a {
     display: flex;
  /*   outline: 1px rebeccapurple dashed; */
     justify-content: center;
-    align-content: center;
-    flex: 1 1 auto;
-    margin: 20px;
+    align-items: center;
+    flex: 1;
 }
 
 .game-button {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 0;
 
     border-radius: 25px;
     margin: 20px;
     padding: 15px;
     background-color: rgb(234, 235, 235);
-    max-height: 220px;
     transition-property: transform;
     transition-duration: 0.1s;
 }
@@ -76,7 +74,7 @@ a {
 }
 .footer {
     display: flex;
-    flex: auto;
+    flex: 0;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -92,6 +90,7 @@ a {
 .info-container {
     display: flex;
     flex-direction: column;
+    flex: auto;
     justify-content: flex-start;
     margin: 72px;
     padding: 26px;
@@ -106,5 +105,19 @@ a {
     height: 200px;
     background-color: rgb(235,235,235);
     border-radius: 25px;
-    margin: 0px 20px;
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.player {
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(235,235,235);
 }
