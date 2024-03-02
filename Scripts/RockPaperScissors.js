@@ -130,3 +130,32 @@ function playGame(choices = ['Rock', 'Paper', 'Scissors']) {
         console.log("Computer wins!");
     }
 }
+
+const gameBtn = document.querySelectorAll('.game-button');
+
+
+gameBtn.forEach(element => {
+    element.addEventListener('click', e =>{
+        //alert(element.id)
+        const compChoice = getComputerChoice();
+        let playerChoice;
+
+        switch(element.id)
+        {
+            case 'rockBtn':
+                playerChoice = 'Rock';
+                break;
+            case 'paperBtn':
+                playerChoice = 'Paper';
+                break;
+            case 'scissorsBtn':
+                playerChoice = 'Scissors';
+                break;
+        }
+
+        const winnerVal = getWinner(undefined, playerChoice, compChoice);
+
+        const winner = winnerVal === -1 ? "It's a tie!" : winnerVal === 0 ? "You win!" : "Computer wins!";
+
+    })
+});
