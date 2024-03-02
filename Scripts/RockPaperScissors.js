@@ -137,6 +137,7 @@ let playerWins = 0,
 const gameBtn = document.querySelectorAll('.game-button');
 const playerWindow = document.querySelector("#score1");
 const computerWindow = document.querySelector('#score2');
+const info = document.querySelector('#info');
 
 gameBtn.forEach(element => {
     element.addEventListener('click', e =>{
@@ -157,6 +158,25 @@ gameBtn.forEach(element => {
                 break;
         }
 
+        switch(compChoice)
+        {
+            case 'Rock':
+                document.querySelector('#rockBtn').style.border = 'thick solid red';
+                document.querySelector('#paperBtn').style.border = 'none';
+                document.querySelector('#scissorsBtn').style.border = 'none';
+                break;
+            case 'Paper':
+                document.querySelector('#paperBtn').style.border = 'thick solid red';
+                document.querySelector('#rockBtn').style.border = 'none';
+                document.querySelector('#scissorsBtn').style.border = 'none';
+                break;
+            case 'Scissors':
+                document.querySelector('#scissorsBtn').style.border = 'thick solid red';
+                document.querySelector('#paperBtn').style.border = 'none';
+                document.querySelector('#rockBtn').style.border = 'none';
+                break;
+        }
+
         const winnerVal = getWinner(undefined, playerChoice, compChoice);
         if(winnerVal == 1)
         {
@@ -173,6 +193,6 @@ gameBtn.forEach(element => {
         console.log(playerWins);
 
 
-        const winner = winnerVal === -1 ? "It's a tie!" : winnerVal === 0 ? "You win!" : "Computer wins!";
+        info.textContent = winnerVal === -1 ? "It's a tie!" : winnerVal === 0 ? "You win!" : "Computer wins!";
     })
 });
