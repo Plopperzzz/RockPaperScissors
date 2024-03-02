@@ -131,8 +131,12 @@ function playGame(choices = ['Rock', 'Paper', 'Scissors']) {
     }
 }
 
-const gameBtn = document.querySelectorAll('.game-button');
+let playerWins = 0,
+    computerWins = 0;
 
+const gameBtn = document.querySelectorAll('.game-button');
+const playerWindow = document.querySelector("#score1");
+const computerWindow = document.querySelector('#score2');
 
 gameBtn.forEach(element => {
     element.addEventListener('click', e =>{
@@ -154,8 +158,21 @@ gameBtn.forEach(element => {
         }
 
         const winnerVal = getWinner(undefined, playerChoice, compChoice);
+        if(winnerVal == 1)
+        {
+            playerWins++;
+        }
+        if(winnerVal == 0)
+        {
+            computerWins++;
+        }
+
+        playerWindow.textContent = playerWins;
+        computerWindow.textContent = computerWins;
+        console.log(computerWins);
+        console.log(playerWins);
+
 
         const winner = winnerVal === -1 ? "It's a tie!" : winnerVal === 0 ? "You win!" : "Computer wins!";
-
     })
 });

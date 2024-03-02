@@ -31,20 +31,20 @@
         <div class="info-container">
             <div class="result-container">
                 <div class="container">
-                    <div class="result">
+                    <div class="player">Player</div>
+                    <div class="result" id="score1">0
                     </div>
-                    <div class="player">Player <span id='score1'></span></div>
                 </div>
 
                 <div class="container">
-                    <div class="result">
+                    <div class="player">Computer></div>
+                    <div class="result" id="score2">0
                     </div>
-                    <div class="player">Computer <span id='score2'></span></div>
                 </div>
             </div>
-            <h1 style="color: rgb(235,235,235); text-align: center; height: 36px; padding: 20px;"> </h1>
+            <div class=""></div>
         </div>
-        <div class="button-container">
+            <div class="button-container">
             <div id="rockBtn" class="game-button">
 
                 <svg id='rockSVG' xmlns="http://www.w2.org/2000/svg" viewBox="0 0 2048 2048" class="svg_c" width="200px"
@@ -70,6 +70,9 @@
                 </svg>
             </div>
         </div>
+        <div class="secondary-buttons">
+            <button class="btn" onclick="location.reload()">Play Again</button>
+        </div>
     </div>
 
     <div class="footer">
@@ -85,7 +88,7 @@
                 </a>
             </li>
             <li><a href="https://www.theodinproject.com/" target="_blank">
-                    <svg width="30" height="100%" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="30" max-height="100%" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M8.68927 35.4922L13.148 20.0493H30.9831L35.4419 35.4922H8.68927Z" fill="#EED9C3" />
                         <ellipse cx="27.7848" cy="27.8815" rx="1.26005" ry="1.24284" fill="#353535" />
