@@ -42,6 +42,7 @@ li {
     align-items: center;
     flex-wrap: nowrap;
     font-size: 80px;
+    margin-top: 60px;
     color: rgb(234,235,235);
 }
 
