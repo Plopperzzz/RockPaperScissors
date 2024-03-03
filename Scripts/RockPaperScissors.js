@@ -161,19 +161,20 @@ gameBtn.forEach(element => {
         switch(compChoice)
         {
             case 'Rock':
-                document.querySelector('#rockBtn').style.border = 'thick solid red';
-                document.querySelector('#paperBtn').style.border = 'none';
-                document.querySelector('#scissorsBtn').style.border = 'none';
+                document.querySelector('#rockBtn').style.backgroundColor = '#d47c74';
+                document.querySelector('#paperBtn').style.backgroundColor = 'rgb(235,235,235)';
+                document.querySelector('#scissorsBtn').style.backgroundColor = 'rgb(235,235,235)';
                 break;
             case 'Paper':
-                document.querySelector('#paperBtn').style.border = 'thick solid red';
-                document.querySelector('#rockBtn').style.border = 'none';
-                document.querySelector('#scissorsBtn').style.border = 'none';
+                document.querySelector('#paperBtn').style.backgroundColor = '#d47c74';
+                document.querySelector('#rockBtn').style.backgroundColor = 'rgb(235,235,235)';
+                document.querySelector('#scissorsBtn').style.backgroundColor = 'rgb(235,235,235)';
+
                 break;
             case 'Scissors':
-                document.querySelector('#scissorsBtn').style.border = 'thick solid red';
-                document.querySelector('#paperBtn').style.border = 'none';
-                document.querySelector('#rockBtn').style.border = 'none';
+                document.querySelector('#scissorsBtn').style.backgroundColor = '#d47c74';
+                document.querySelector('#paperBtn').style.backgroundColor = 'rgb(235,235,235)';
+                document.querySelector('#rockBtn').style.backgroundColor = 'rgb(235,235,235)';
                 break;
         }
 
