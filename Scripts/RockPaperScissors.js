@@ -179,11 +179,11 @@ gameBtn.forEach(element => {
         }
 
         const winnerVal = getWinner(undefined, playerChoice, compChoice);
-        if(winnerVal == 1)
+        if(winnerVal == 0)
         {
             playerWins++;
         }
-        if(winnerVal == 0)
+        if(winnerVal == 1)
         {
             computerWins++;
         }
